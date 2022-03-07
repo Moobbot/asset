@@ -1,0 +1,147 @@
+/*------------------------------------CSS Footer----------------------------------*/
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.footer-padding {
+    padding-top: 120px;
+    padding-bottom: 20px;
+    @media #{$md} {
+        padding-top: 100px;
+        padding-bottom: 20px;
+    }
+    @media #{$sm} {
+        padding-top: 80px;
+        padding-bottom: 20px;
+    }
+    @media #{$xs} {
+        padding-top: 80px;
+        padding-bottom: 20px;
+    }
+}
+
+.footer-area {
+    //footer pera
+    .footer-pera {
+        p {
+            color: #575b5f;
+            padding-right: 52px;
+            @media #{$md} {
+                padding-right: 0px;
+            }
+            @media #{$sm} {
+                padding-right: 0px;
+            }
+            @media #{$xs} {
+                padding-right: 0px;
+            }
+            margin-bottom: 50px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+    }
+    //footer tittle
+    .footer-tittle {
+        h4 {
+            color: #1D2547;
+            font-size: 24px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        ul {
+            margin: 0px;
+            padding: 0px;
+            li {
+                margin-bottom: 15px;
+                // list-style: "- " outside;
+                a {
+                    color: #575b5f;
+                    font-weight: 400;
+                    font-size: 16px;
+                    &:hover {
+                        color: $theme-color-1;
+                    }
+                    @media #{$md} {
+                        font-size: 15px;
+                    }
+                    @media #{$sm} {
+                        font-size: 14px;
+                    }
+                    @media #{$xs} {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        p {
+            color: #575b5f;
+            font-size: 16px;
+            @media #{$md} {
+                font-size: 15px;
+            }
+            @media #{$sm} {
+                font-size: 14px;
+            }
+            @media #{$xs} {
+                font-size: 14px;
+            }
+        }
+    }
+    // footer social
+    .footer-social {
+        a {
+            color: $theme-color-1;
+            background: rgba(103, 133, 255, 0.08);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 14px;
+            line-height: 40px;
+            display: inline-block;
+            text-align: center;
+            margin-right: 8px;
+            &:hover {
+                color: #fff;
+                background: $theme-color-1;
+            }
+            i {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.footer-bottom-area {
+    .footer-border {
+        padding-top: 70px;
+        padding-bottom: 1px;
+        p {
+            color: #1D2547;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 2;
+            margin-bottom: 12px;
+            height: 44px;
+            i {
+                color: $theme-color-1;
+            }
+            a {
+                color: $theme-color-1;
+                &:hover {
+                    color: $font_color-1;
+                }
+            }
+        }
+    }
+}
+
+.number a {
+    font-size: 26px !important;
+    color: #6785FF !important;
+    margin-bottom: 24px;
+    display: block;
+    @media #{$md} {
+        font-size: 19px !important;
+    }
+}

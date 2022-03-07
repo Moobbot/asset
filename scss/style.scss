@@ -1,0 +1,46 @@
+/* Theme Description -- Mô tả chủ đề
+-------------------------------------------------
+
+	Theme Name:
+	Author:
+	Support: 
+	Description:
+	Version:
+
+------------------------------------------------- 
+*/
+
+
+/* CSS Index
+-------------------------------------------------
+
+	1. Theme default css
+	2. Header
+	3. Slider
+	4. About-area
+	5. Features-box
+	6. Department
+	7. Team
+	8. Video-area
+	9. Counter
+	10. Footer
+
+-------------------------------------------------
+*/
+
+// Default
+@import 'variables';
+@import 'mixins';
+@import 'common';
+// Homepage1
+@import 'headerMenu';
+@import 'slider';
+@import 'services.scss';
+@import 'contact';
+@import 'footer';
+// inner Page
+// Default Element Page
+@import 'extend';
+@import 'elements';
+//Login
+@import 'login';

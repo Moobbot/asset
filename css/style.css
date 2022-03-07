@@ -1,0 +1,1288 @@
+@charset "UTF-8";
+/* Theme Description -- Mô tả chủ đề
+-------------------------------------------------
+
+	Theme Name:
+	Author:
+	Support: 
+	Description:
+	Version:
+
+------------------------------------------------- 
+*/
+/* CSS Index
+-------------------------------------------------
+
+	1. Theme default css
+	2. Header
+	3. Slider
+	4. About-area
+	5. Features-box
+	6. Department
+	7. Team
+	8. Video-area
+	9. Counter
+	10. Footer
+
+-------------------------------------------------
+*/
+/*------------------------------ Responsive ------------------------------*/
+/*-------------   Color Variable  --------------*/
+/*-------------Color include--------------*/
+/*-- Background color---*/
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800&family=Raleway:wght@400;500;600;700;800;900&display=swap");
+.gray-bg {
+  background: #f7f7fd;
+}
+
+.white-bg {
+  background: #fff;
+}
+
+.black-bg {
+  background: #16161a;
+}
+
+.theme-bg {
+  background: #6785FF;
+}
+
+.brand-bg {
+  background: #f1f4fa;
+}
+
+.testimonial-bg {
+  background: #f9fafc;
+}
+
+/*--- color------*/
+.white-color {
+  color: #fff;
+}
+
+.black-color {
+  color: #16161a;
+}
+
+.theme-color-1 {
+  color: #6785FF;
+}
+
+.theme-color-2 {
+  color: #140C40;
+}
+
+.theme-color-3 {
+  color: #f27420;
+}
+
+.theme-color-4 {
+  color: #ff3500;
+}
+
+/*-------------------------------------animation----------------------------------*/
+/*
+    * Tham khảo tại: https://www.w3schools.com/css/css3_animations.asp
+    * https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp
+*/
+/*--------------------------------------------------------------------------------*/
+/*
+    * Tham khảo tại: https://www.w3schools.com/cssref/css3_pr_filter.asp
+    * https://xuanthulab.net/su-dung-thuoc-tinh-filter-trong-css.html
+*/
+/*--------------------------------------------------------------------------------*/
+/*
+    *Gradient - màu biến đổi tuyến tính trong CSS cho phép tạo ra các phần tử có màu nền background
+    *là các hiệu ứng chuyển màu giữa hai hay nhiều màu sắc được chỉ định
+    *Có 2 loại Gradient được CSS hỗ trợ:
+    *Linear Gradient: Quét màu xuất phát từ 1 phía,
+    *có thể theo chiều lên, xuống, trái, phải, đường chéo.
+    *Radial Gradient: Quét màu xuất phát từ tâm.
+
+    *direction - Hướng xác định điểm bắt đầu hiệu ứng chuyển màu
+    *direction - (to + (top, bottom, bottom right, right, ...)) Ex: to top
+    *color-stop1, color-stop2 - Các điểm dừng màu
+    * Tham khảo tại: https://www.w3schools.com/css/css3_gradients.asp
+    *@include gradient(direction, color-stop1, color-stop2)
+*/
+/*--------------------------------------------------------------------------------*/
+/*
+    * Tham khảo tại: https://viblo.asia/p/tap-tanh-tim-hieu-css-animation-bai-2-transforms-4dbZNpNg5YM
+*/
+/*--------------------------------------------------------------------------------*/
+/*------------------------------------transition----------------------------------*/
+/*
+    * Tham khảo tại: https://www.w3schools.com/css/css3_transitions.asp
+*/
+/*--------------------------------------------------------------------------------*/
+/*
+    *Align content - Căn chỉnh nội dung
+*/
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------Some characteristics----------------------------*/
+/*--------------------------------------------------------------------------------*/
+/*------------------------------------placeholder----------------------------------*/
+/*
+    * Tham khảo tại: https://www.w3schools.com/cssref/sel_placeholder.asp
+*/
+/*--------------------------------------------------------------------------------*/
+/*------------------------------------CSS Common----------------------------------*/
+*,
+html,
+body,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main {
+  min-height: 50em;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+  color: #072366;
+  margin-top: 0px;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: normal;
+}
+
+p {
+  font-family: "Muli", sans-serif;
+  color: #10285d;
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.img {
+  max-width: 100%;
+  -webkit-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+.button {
+  -webkit-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  color: none;
+}
+
+button:focus,
+input:focus,
+input:focus,
+textarea,
+textarea:focus {
+  outline: 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+input:focus::-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+hr {
+  border-bottom: 1px solid #eceff8;
+  border-top: 0 none;
+  margin: 30px 0;
+  padding: 0;
+}
+
+.btn {
+  color: #fff;
+  font-size: 18px;
+  padding: 16px 40px;
+  display: inline-block;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 30px;
+  background-size: 200%;
+  background-image: -webkit-gradient(linear, right top, left top, from(#6785FF), color-stop(#5172f5), to(#6785FF));
+  background-image: linear-gradient(to left, #6785FF, #5172f5, #6785FF);
+  background-position: right;
+  cursor: pointer;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.btn i {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
+  left: 26px;
+  -webkit-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+}
+
+.btn:hover {
+  color: #fff;
+  background-position: left;
+}
+
+.hidden {
+  display: none;
+}
+
+.preloader {
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+  margin: 0 auto;
+}
+
+.preloader .preloader-inner .preloader-circle {
+  width: 8em;
+  height: 8em;
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  border-top-color: #6785FF;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-radius: 50%;
+  z-index: 10;
+  -webkit-box-shadow: 0 1px 5px 0 rgba(35, 181, 185, 0.15);
+  box-shadow: 0 1px 5px 0 rgba(35, 181, 185, 0.15);
+  background-color: #fff;
+  -webkit-animation: zoom 2000ms infinite ease;
+  animation: zoom 2000ms infinite ease;
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+
+.preloader .preloader-inner .preloader-img {
+  position: absolute;
+  top: 50%;
+  z-index: 11;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+
+.preloader .preloader-inner .preloader-img img {
+  max-width: 80px;
+}
+
+@-webkit-keyframes zoom {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .6s;
+    transition: .6s;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: .6s;
+    transition: .6s;
+  }
+}
+
+@keyframes zoom {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .6s;
+    transition: .6s;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: .6s;
+    transition: .6s;
+  }
+}
+
+/* scrollUp */
+#scrollUp,
+#back-top {
+  background: #6785FF;
+  height: 50px;
+  width: 50px;
+  right: 31px;
+  bottom: 18px;
+  position: fixed;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 48px;
+  border: 2px solid transparent;
+  -webkit-box-shadow: 0 0 10px 3px rgba(108, 98, 98, 0.2);
+  box-shadow: 0 0 10px 3px rgba(108, 98, 98, 0.2);
+}
+
+@media (max-width: 575px) {
+  #scrollUp,
+  #back-top {
+    right: 16px;
+  }
+}
+
+#scrollUp a i,
+#back-top a i {
+  color: #fff;
+  display: block;
+  line-height: 50px;
+}
+
+#scrollUp:hover {
+  color: #fff;
+}
+
+/* Sticky*/
+.sticky-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  -webkit-box-shadow: 0 10px 15px rgba(8, 0, 42, 0.08);
+  box-shadow: 0 10px 15px rgba(8, 0, 42, 0.08);
+  -webkit-animation: 0.3s ease-in-out 0s normal none 1 running fadeInDown;
+  animation: 0.3s ease-in-out 0s normal none 1 running fadeInDown;
+}
+
+/* Sticky end */
+/*------------------------------------CSS Header----------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-area {
+    -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+            box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .header-area {
+    -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+            box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  }
+}
+
+@media (max-width: 575px) {
+  .header-area {
+    -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+            box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  }
+}
+
+.header-area .main-header nav {
+  font-weight: 600;
+  line-height: 1;
+  padding: 0;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .header-area .main-header nav {
+    padding: 15px 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .header-area .main-header nav {
+    padding: 15px 0;
+  }
+}
+
+.header-area .main-header nav .header-left .logo {
+  padding-left: 15px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .header-area .main-header nav .header-left .logo {
+    padding-left: 15px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-area .main-header nav .header-left .logo {
+    padding-left: 15px;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .header-area .main-header nav .header-left .logo {
+    padding-left: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .header-area .main-header nav .header-left .logo {
+    padding-left: 15px;
+  }
+}
+
+.header-area .main-header nav .header-left .logo img {
+  width: 120px;
+}
+
+.header-area .main-header nav .main-menu ul li a {
+  font-family: "Muli", sans-serif;
+  color: #0d2d3e;
+  font-weight: 700;
+  padding: 32px 20px;
+  display: block;
+  font-size: 16px;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-area .main-header nav .main-menu ul li a {
+    padding: 32px 8px !important;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .header-area .main-header nav .main-menu ul li a {
+    margin-top: 24px;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 8px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .header-area .main-header nav .main-menu ul li a {
+    margin-top: 24px;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 8px;
+    margin-left: 20px;
+  }
+}
+
+.header-area .main-header nav .main-menu ul li:hover > a {
+  color: #6785FF;
+}
+
+.header-area .main-header nav .btn-menu-mobile {
+  margin-right: 8px;
+}
+
+.header-area .main-header nav .header-right a {
+  color: #fff;
+}
+
+.header-area .main-header nav .header-right a.header-btn2 {
+  display: inline-block;
+  background: #6785ff;
+  padding: 32px 30px;
+}
+
+.header-area .main-header nav .header-right a:hover {
+  color: #fff;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  background-image: -webkit-gradient(linear, right top, left top, from(#6785FF), color-stop(#5172f5), to(#6785FF));
+  background-image: linear-gradient(to left, #6785FF, #5172f5, #6785FF);
+  background-position: right;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .header-area .main-header nav .header-right {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .header-area .main-header nav .header-right {
+    display: none;
+  }
+}
+
+/*------------------------------------CSS Slider----------------------------------*/
+.slider-height-1 {
+  height: 765px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .slider-height-1 {
+    height: 765px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .slider-height-1 {
+    height: 500px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .slider-height-1 {
+    height: 500px;
+  }
+}
+
+@media (max-width: 575px) {
+  .slider-height-1 {
+    height: 500px;
+  }
+}
+
+.slider-height-2 {
+  height: 400px;
+  background-size: cover;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .slider-height-2 {
+    height: 300px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .slider-height-2 {
+    height: 240px;
+  }
+}
+
+@media (max-width: 575px) {
+  .slider-height-2 {
+    height: 200px;
+  }
+}
+
+.slider-area {
+  margin-top: -1px;
+}
+
+.slider-area .hero-text {
+  overflow: hidden;
+}
+
+.slider-area .hero-text h1 {
+  font-size: 70px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 29px;
+  text-transform: capitalize;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .slider-area .hero-text h1 {
+    font-size: 70px;
+    line-height: 1.2;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .slider-area .hero-text h1 {
+    font-size: 50px;
+    line-height: 1.2;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .slider-area .hero-text h1 {
+    font-size: 35px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 575px) {
+  .slider-area .hero-text h1 {
+    font-size: 29px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+}
+
+.slider-area .hero-text p {
+  font-size: 27px;
+  color: #fff;
+  font-family: "Muli", sans-serif;
+  margin-bottom: 50px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .slider-area .hero-text p {
+    padding-right: 13px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .slider-area .hero-text p {
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 575px) {
+  .slider-area .hero-text p {
+    padding-right: 0px;
+    font-size: 15px;
+  }
+}
+
+/* The hero image - là một hình ảnh lớn có văn bản, thường được đặt ở đầu trang web*/
+/*Tham khảo tại https://www.w3schools.com/howto/howto_css_hero_image.asp*/
+.hero-image-1 {
+  background-image: url(../img/gallery/home-1.jpg);
+  /* Định vị và căn giữa hình ảnh để chia tỷ lệ đẹp trên tất cả các màn hình */
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-overly {
+  position: relative;
+  z-index: 0;
+}
+
+.hero-overly::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+
+.hero-overly2 {
+  position: relative;
+  z-index: 0;
+}
+
+.hero-overly2::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+
+.hero-btn {
+  padding: 16px 40px;
+}
+
+.header-transparent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.slider-area-2 .slider-cap h2 {
+  color: #fff;
+  font-size: 64px;
+  font-weight: 700;
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .slider-area-2 .slider-cap h2 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .slider-area-2 .slider-cap h2 {
+    font-size: 27px;
+  }
+}
+
+/*------------------------------------CSS Offer-services----------------------------------*/
+.offer-services .single-offers {
+  position: relative;
+}
+
+.offer-services .single-offers .offers-caption {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.offer-services .single-offers .offers-caption .cat-icon img {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 575px) {
+  .offer-services .single-offers .offers-caption .cat-icon img {
+    margin-bottom: 9px;
+  }
+}
+
+.offer-services .single-offers .offers-caption .cat-cap {
+  padding: 0 102px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .offer-services .single-offers .offers-caption .cat-cap {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .offer-services .single-offers .offers-caption .cat-cap {
+    padding: 0 10px;
+  }
+}
+
+.offer-services .single-offers .offers-caption .cat-cap h5 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 21px;
+  -webkit-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+  text-transform: capitalize;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .offer-services .single-offers .offers-caption .cat-cap h5 {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 575px) {
+  .offer-services .single-offers .offers-caption .cat-cap h5 {
+    font-size: 23px;
+    margin-bottom: 10px;
+  }
+}
+
+.offer-services .single-offers .offers-caption .cat-cap p {
+  margin-bottom: 36px;
+  color: #fff;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .offer-services .single-offers .offers-caption .cat-cap p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .offer-services .single-offers .offers-caption .cat-cap p {
+    margin-bottom: 0px;
+  }
+}
+
+/*------------------------------------CSS Map----------------------------------*/
+.map-area {
+  margin-top: 130px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .map-area {
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .map-area {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 575px) {
+  .map-area {
+    margin-top: 90px;
+  }
+}
+
+/*------------------------------------CSS Contact----------------------------------*/
+.contact-section {
+  padding: 100px 0;
+}
+
+@media (max-width: 991px) {
+  .contact-section {
+    padding: 70px 0 40px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .contact-section {
+    padding: 80px 0 50px;
+  }
+}
+
+/*=================== contact form start ====================*/
+.contact-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.form-contact label {
+  font-size: 18px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .form-contact label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 575px) {
+  .form-contact label {
+    font-size: 14px;
+  }
+}
+
+.form-contact .form-title {
+  border-bottom: 1px #dddddd solid;
+}
+
+.form-contact .form-control {
+  border: 1px solid #e5e6e9;
+  border-radius: 0px;
+  height: 48px;
+  padding-left: 18px;
+  background: transparent;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .form-contact .form-control {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 575px) {
+  .form-contact .form-control {
+    font-size: 13px;
+  }
+}
+
+.form-contact .form-control:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-contact .form-control::-webkit-input-placeholder {
+  font-weight: 300;
+  color: #999999;
+}
+
+.form-contact .form-control:-ms-input-placeholder {
+  font-weight: 300;
+  color: #999999;
+}
+
+.form-contact .form-control::-ms-input-placeholder {
+  font-weight: 300;
+  color: #999999;
+}
+
+.form-contact .form-control::placeholder {
+  font-weight: 300;
+  color: #999999;
+}
+
+.form-contact textarea {
+  border-radius: 0px;
+  height: 100% !important;
+}
+
+.boxed-btn {
+  color: #6785FF !important;
+  background: #fff;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  display: inline-block;
+  padding: 18px 44px;
+  letter-spacing: 3px;
+  border: 1px solid #6785FF;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.boxed-btn:hover {
+  background: #6785FF;
+  color: #fff !important;
+}
+
+.boxed-btn:focus {
+  outline: none;
+}
+
+.boxed-btn.large-width {
+  width: 220px;
+}
+
+/*=================== contact form end ====================*/
+/*=================== contact banner start ====================*/
+.contact-info {
+  margin-bottom: 25px;
+}
+
+.contact-info__icon {
+  margin-right: 20px;
+}
+
+.contact-info__icon i,
+.contact-info__icon span {
+  color: #8f9195;
+  font-size: 27px;
+}
+
+.contact-info .media-body h3 {
+  font-size: 16px;
+  margin-bottom: 0;
+  color: #2a2a2a;
+}
+
+.contact-info .media-body h3 a:hover {
+  color: #140C40;
+}
+
+.contact-info .media-body p {
+  color: #8a8a8a;
+}
+
+/*=================== contact banner end ====================*/
+/*------------------------------------CSS Footer----------------------------------*/
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.footer-padding {
+  padding-top: 120px;
+  padding-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .footer-padding {
+    padding-top: 100px;
+    padding-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .footer-padding {
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-padding {
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+}
+
+.footer-area .footer-pera p {
+  color: #575b5f;
+  padding-right: 52px;
+  margin-bottom: 50px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .footer-area .footer-pera p {
+    padding-right: 0px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .footer-area .footer-pera p {
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-area .footer-pera p {
+    padding-right: 0px;
+  }
+}
+
+.footer-area .footer-tittle h4 {
+  color: #1D2547;
+  font-size: 24px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.footer-area .footer-tittle ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.footer-area .footer-tittle ul li {
+  margin-bottom: 15px;
+}
+
+.footer-area .footer-tittle ul li a {
+  color: #575b5f;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.footer-area .footer-tittle ul li a:hover {
+  color: #6785FF;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .footer-area .footer-tittle ul li a {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .footer-area .footer-tittle ul li a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-area .footer-tittle ul li a {
+    font-size: 14px;
+  }
+}
+
+.footer-area .footer-tittle p {
+  color: #575b5f;
+  font-size: 16px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .footer-area .footer-tittle p {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .footer-area .footer-tittle p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-area .footer-tittle p {
+    font-size: 14px;
+  }
+}
+
+.footer-area .footer-social a {
+  color: #6785FF;
+  background: rgba(103, 133, 255, 0.08);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 14px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 8px;
+}
+
+.footer-area .footer-social a:hover {
+  color: #fff;
+  background: #6785FF;
+}
+
+.footer-area .footer-social a i {
+  display: inline-block;
+}
+
+.footer-bottom-area .footer-border {
+  padding-top: 70px;
+  padding-bottom: 1px;
+}
+
+.footer-bottom-area .footer-border p {
+  color: #1D2547;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 12px;
+  height: 44px;
+}
+
+.footer-bottom-area .footer-border p i {
+  color: #6785FF;
+}
+
+.footer-bottom-area .footer-border p a {
+  color: #6785FF;
+}
+
+.footer-bottom-area .footer-border p a:hover {
+  color: #10285d;
+}
+
+.number a {
+  font-size: 26px !important;
+  color: #6785FF !important;
+  margin-bottom: 24px;
+  display: block;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .number a {
+    font-size: 19px !important;
+  }
+}
+
+/*------------------------------------CSS Extend----------------------------------*/
+.flex-center-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
+
+.hero-overly::before {
+  /* Sử dụng "linear-gradient" để thêm hiệu ứng nền tối cho hình ảnh. Điều này sẽ làm cho văn bản dễ đọc hơn */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1d2546+0,1d2446+1,1e2648+1,1d2446+1,1e2648+1,1c2447+3,1e2647+3,1c2447+3,1e2648+3,1c2446+3,1e2648+3,1e2648+4,1c2546+6,1e2648+6,1c2546+6,1e2648+6,1c2546+9,1e2548+9,1c2546+9,1e2648+9,1e2548+11,1c2546+11,1e2648+11,1c2447+12,1e2648+12,1c2447+12,1e2648+12,1c2447+12,1e2647+12,1e2648+14,1c2447+14,1e2647+14,1c2447+14,1e2648+14,1c2546+15,1e2648+15,1d2648+16,1d2446+16,1d2648+16,1e2648+17,1c2546+17,1e2548+17,1d2646+18,1f2648+18,1d2446+18,1d2648+18,1d2447+19,1d2748+19,1e2546+19,1c2448+20,1e2648+20,1c2446+20,1e2648+20,1d2446+20,1e2648+20,1d2446+20,1e2648+20,1d2446+20,1e2648+21,1e2647+22,1c2448+22,1e2648+22,1c2446+22,1e2648+22,1c2446+23,1e2648+23,1c2446+23,1e2648+23,1c2447+23,1f2747+23,1d2546+24,1d2546+24,1d2549+24,1d2546+24,1d2549+24,1d2546+24,1e2648+25,1e2446+25,1e2648+25,1e2446+25,1e2648+25,1e2446+25,1e2648+25,1c2447+25,1e2648+25,1c2447+25,1e2749+25,1c2447+25,1e2747+25,1c2547+25,1e2747+25,1c2548+26,1f2548+26,1c2546+26,1f2548+26,1d2546+26,1f2549+26,1d2546+26,1f2549+26,1d2546+26,1d2648+27,1d2446+27,1d2648+27,1d2446+27,1d2648+27,1d2446+27,1d2648+27,1e2447+27,1e2749+27,1e2447+27,1e2747+27,1e2548+28,1c2546+28,1e2548+28,1c2546+28,1e2549+28,1c2546+28,1e2549+28,1c2647+28,1e2549+28,1c2647+29,1f2647+29,1c2647+29,1f2647+29,1d2447+29,1f2647+29,1d2446+29,1d2648+29,1d2446+29,1d2648+29,1d2446+29,1d2648+29,1d2446+29,1d2749+29,1d2446+30,1d2749+30,1d2746+30,1e2548+30,1b2546+30,1e2548+30,1b2546+30,1e2548+31,1e2647+31,1c2447+31,1e2647+31,1c2447+31,1f2647+31,1c2448+31,1f2647+31,1c2446+31,1f2748+31,1c2446+31,1f2748+31,1d2446+32,1f2748+32,1d2446+32,1f2749+32,1d2446+32,1d2749+32,1d2446+32,1e2649+33,1e2347+33,1e2647+33,1b2447+33,1e2647+33,1b2447+33,1e2647+33,1c2448+34,1e2748+34,1c2445+34,1e2748+34,1c2446+34,1e2748+34,1c2446+34,1f2749+34,1c2446+34,1f2749+34,1c2547+34,1f2449+34,1c2547+34,1f2547+34,1c2547+34,1f2547+34,1d2646+35,1d2649+35,1d2346+35,1e2747+35,1e2448+36,1e2748+36,1e2445+36,1e2748+36,1b2446+36,1e2748+36,1b2446+36,1e2749+36,1b2446+36,1e2749+36,1c2547+36,1e2449+36,1c2547+36,1f2547+36,1c2548+37,1f2547+37,1c2548+37,1f2548+37,1c2648+37,1f2548+37,1c2645+37,1f2648+37,1c2645+37,1f2648+37,1d2646+37,1d2649+37,1d2346+37,1d2649+37,1d2646+38,1d2447+38,1d2747+38,1d2448+38,1d2747+38,1d2448+38,1d2748+38,1d2448+38,1d2748+38,1e2446+38,1d2748+38,1e2446+38,1e2849+38,1e2446+38,1e2449+38,1e2546+39,1e254a+39,1b2546+39,1e2546+39,1b2547+39,1f2547+39,1b2547+39,1f2547+39,1c2648+39,1f2648+39,1c2645+39,1f2648+39,1c2646+39,1f2648+39,1c2346+39,1f2649+39,1c2346+40,1f2649+40,1c2347+40,1f2646+40,1c2347+40,202747+40,1c2347+40,202747+40,1d2448+40,1c2747+40,1d2448+40,1d2848+40,1d2448+40,1d2848+40,1d2445+40,1d2848+40,1d2445+40,1d2849+40,1d2445+40,1d2449+41,1e2546+41,1e254a+41,1e2546+41,1e2648+41,1b2645+41,1e2648+41,1b2746+42,1e2648+42,1b2346+42,1f2749+42,1b2346+42,1f2749+42,1b2347+42,1f2749+42,1b2347+42,1f2747+42,1b2347+42,1f2747+42,1c2448+42,1f2747+42,1c2448+42,202848+42,1c2448+42,202848+42,1c2449+42,202848+43,1c2445+43,202849+43,1c2445+43,1c2449+43,1d2546+43,1d254a+43,1d2546+43,1d254a+43,1d2546+43,1e2648+44,1e2345+44,1e2648+44,1e2345+44,1e2749+44,1e2345+44,1e2749+44,1f2346+44,1e2749+44,1a2346+44,1f2846+44,1a2346+44,1f2846+44,1b2448+44,1f2846+44,1b2448+44,1f2848+45,1b2448+45,1f2848+45,1b2449+45,1f2848+45,1b2444+45,202449+45,1b2444+45,202449+45,1c2546+45,202449+45,1c2546+45,20254a+45,1c2546+45,20254a+45,1c2647+45,202546+45,1c2647+45,212647+45,1c2647+45,1d2648+46,1d2245+46,1d2648+46,1d2245+46,1d274a+46,1d2245+46,1d274a+46,1e2346+46,1d274a+46,1e2346+46,1e284b+46,1e2346+46,1e2846+46,1f2447+47,1e2846+47,1f2447+47,1f2947+47,1f2447+47,1f2947+47,1a2449+47,1f2947+47,1a2449+47,1f2449+47,1a2444+47,1f2449+47,1b2545+47,1f2449+47,1b2545+47,20254a+47,1b2545+47,20254a+47,1b2647+47,20254a+48,1b2647+48,212647+48,1b2647+48,212647+48,1c2748+48,212647+48,1c2748+48,212748+48,1c2748+48,212748+48,1c224a+48,212748+48,1c2244+48,1c284a+48,1c2244+48,1c284a+48,1d2346+48,1c284a+48,1d2346+49,1d294b+49,1d2346+49,1d2946+49,1e2447+49,1d2946+49,1e2447+49,1e2a47+49,1e2447+49,1e2a47+49,1e2449+49,1e2449+49,1e2443+49,1e2449+49,1f2544+49,1e2449+49,1f2544+49,1f254b+50,1f2544+50,1f254b+50,1a2646+50,1f254b+50,1a2646+50,202646+50,1a2646+50,202646+50,1a2748+50,202646+50,1a2748+50,212748+50,1a2148+50,212748+50,1b224a+50,212748+50,1b2243+50,22284a+50,1b2243+50,22284a+51,1c2245+51,22284a+51,1c2245+51,22294c+51,1c2245+51,22294c+51,1c2347+51,1c2945+51,1c2347+51,1c2b47+51,1c2347+51,1c2b47+51,1d2449+51,1c2347+51,1d2449+51,1e2543+52,1d2449+52,1e2543+52,1e254b+52,1e2543+52,1e254b+52,1f2746+52,1e254b+52,1f2746+52,1f274d+52,1f2746+52,202848+52,182048+52,202848+52,19214a+52,202848+53,19214a+53,21294a+53,192142+53,21294a+53,1a2244+53,21294a+53,1a2244+53,222a4c+53,1a2244+53,222a4c+53,1a2346+53,222a4c+53,1a2346+53,232c46+53,1a2346+53,232c46+53,1b2449+53,232346+53,1b2449+54,242449+54,1b2449+54,242449+54,1c2642+54,1b2449+54,1c2642+54,1c264c+54,1c2642+54,1c264c+54,1d2745+54,1c264c+54,1d2745+54,1d274e+54,1d2745+54,1f2947+55,1f1f47+55,1f2947+55,20204a+55,1f2947+55,20204a+55,202a4a+55,202040+55,202a4a+55,212143+55,202a4a+55,162143+55,212c4e+55,162143+55,212c4e+55,172346+55,212c4e+55,172346+55,232e46+55,172346+55,232346+56,182449+56,232346+56,182449+56,242449+56,182449+56,242449+56,1a264d+56,242449+56,1a2640+56,26264d+56,1a2640+56,26264d+56,1b2843+56,26264d+56,1b2843+56,282851+56,1b2843+56,1b2851+56,1c2b47+57,1b2843+57,1c1c47+57,1c2b47+57,1c1c47+57,1c2b47+57,1e1e4b+57,1c2b47+57,1e1e4b+57,1e2d4b+57,1e1e4b+57,1e2d4b+57,202040+57,1e2d4b+57,202040+57,203050+57,202040+57,203050+57,222244+57,203050+58,222244+58,223355+58,222244+58,222244+58,242449+58,222244+58,122449+58,242449+58,122449+58,242449+58,14274e+58,242449+58,14273b+58,27274e+58,14273b+58,27274e+58,152a40+58,27274e+58,152a40+59,2a2a55+59,152a40+59,2a2a55+59,172e46+59,2a2a40+59,171746+59,2e2e46+59,171746+59,2e2e46+59,1a1a4d+59,2e2e46+59,1a1a4d+59,1a334d+59,1a1a4d+59,1a334d+59,1c1c39+59,1a334d+59,1c1c39+59,1c3955+60,1c1c39+60,1c3955+60,202040+60,1c3955+60,202040+60,204060+60,202040+60,202040+60,242449+60,202040+60,242449+60,242449+60,2a2a55+60,242449+60,2a2a55+60,2a2a55+60,2a2a2a+61,2a2a55+61,003333+61,2a2a55+61,003333+61,333366+61,003333+61,333366+61,000040+61,333366+61,000040+61,404040+61,000040+61,404040+61,000055+61,404040+61,000055+61,555555+61,000055+61,555555+61,000080+62,555555+62,000000+62,808080+62,000000+62,808080+62,000000+62,808080+62,000000+62,0000ff+62,000000+62,0000ff+62,000000+62,000000+100&0.78+0,0+62,0+100 */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(rgba(29, 37, 70, 0.78)), color-stop(1%, rgba(30, 38, 72, 0.77)), color-stop(3%, rgba(30, 38, 72, 0.74)), color-stop(4%, rgba(30, 38, 72, 0.73)), color-stop(6%, rgba(30, 38, 72, 0.7)), color-stop(9%, rgba(30, 38, 72, 0.66)), color-stop(11%, rgba(30, 38, 72, 0.64)), color-stop(12%, rgba(30, 38, 71, 0.63)), color-stop(14%, rgba(30, 38, 72, 0.6)), color-stop(15%, rgba(30, 38, 72, 0.59)), color-stop(16%, rgba(29, 38, 72, 0.58)), color-stop(17%, rgba(30, 37, 72, 0.57)), color-stop(18%, rgba(29, 38, 72, 0.56)), color-stop(19%, rgba(30, 37, 70, 0.55)), color-stop(20%, rgba(29, 36, 70, 0.54)), color-stop(21%, rgba(30, 38, 72, 0.53)), color-stop(22%, rgba(30, 38, 72, 0.52)), color-stop(23%, rgba(31, 39, 71, 0.51)), color-stop(24%, rgba(29, 37, 70, 0.5)), color-stop(25%, rgba(30, 39, 71, 0.49)), color-stop(26%, rgba(29, 37, 70, 0.48)), color-stop(27%, rgba(30, 39, 71, 0.47)), color-stop(28%, rgba(30, 37, 73, 0.46)), color-stop(29%, rgba(29, 39, 73, 0.45)), color-stop(30%, rgba(27, 37, 70, 0.44)), color-stop(31%, rgba(31, 39, 72, 0.43)), color-stop(32%, rgba(29, 36, 70, 0.42)), color-stop(33%, rgba(30, 38, 71, 0.41)), color-stop(34%, rgba(31, 37, 71, 0.4)), color-stop(35%, rgba(30, 39, 71, 0.39)), color-stop(36%, rgba(31, 37, 71, 0.38)), color-stop(37%, rgba(29, 38, 73, 0.37)), color-stop(38%, rgba(30, 36, 73, 0.36)), color-stop(39%, rgba(31, 38, 73, 0.35)), color-stop(40%, rgba(29, 36, 69, 0.33)), color-stop(41%, rgba(30, 38, 72, 0.32)), color-stop(42%, rgba(28, 36, 73, 0.3)), color-stop(43%, rgba(29, 37, 70, 0.28)), color-stop(44%, rgba(27, 36, 72, 0.27)), color-stop(45%, rgba(28, 38, 71, 0.26)), color-stop(46%, rgba(30, 40, 70, 0.24)), color-stop(47%, rgba(27, 38, 71, 0.22)), color-stop(48%, rgba(28, 40, 74, 0.21)), color-stop(49%, rgba(31, 37, 68, 0.2)), color-stop(50%, rgba(27, 34, 67, 0.18)), color-stop(51%, rgba(29, 36, 73, 0.16)), color-stop(52%, rgba(25, 33, 74, 0.15)), color-stop(53%, rgba(35, 35, 70, 0.14)), color-stop(54%, rgba(29, 39, 69, 0.12)), color-stop(55%, rgba(23, 35, 70, 0.11)), color-stop(56%, rgba(27, 40, 81, 0.09)), color-stop(57%, rgba(34, 34, 68, 0.08)), color-stop(58%, rgba(39, 39, 78, 0.06)), color-stop(59%, rgba(28, 28, 57, 0.05)), color-stop(60%, rgba(42, 42, 85, 0.03)), color-stop(61%, rgba(85, 85, 85, 0.02)), color-stop(62%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to right, rgba(29, 37, 70, 0.78) 0%, rgba(30, 38, 72, 0.77) 1%, rgba(30, 38, 72, 0.74) 3%, rgba(30, 38, 72, 0.73) 4%, rgba(30, 38, 72, 0.7) 6%, rgba(30, 38, 72, 0.66) 9%, rgba(30, 38, 72, 0.64) 11%, rgba(30, 38, 71, 0.63) 12%, rgba(30, 38, 72, 0.6) 14%, rgba(30, 38, 72, 0.59) 15%, rgba(29, 38, 72, 0.58) 16%, rgba(30, 37, 72, 0.57) 17%, rgba(29, 38, 72, 0.56) 18%, rgba(30, 37, 70, 0.55) 19%, rgba(29, 36, 70, 0.54) 20%, rgba(30, 38, 72, 0.53) 21%, rgba(30, 38, 72, 0.52) 22%, rgba(31, 39, 71, 0.51) 23%, rgba(29, 37, 70, 0.5) 24%, rgba(30, 39, 71, 0.49) 25%, rgba(29, 37, 70, 0.48) 26%, rgba(30, 39, 71, 0.47) 27%, rgba(30, 37, 73, 0.46) 28%, rgba(29, 39, 73, 0.45) 29%, rgba(27, 37, 70, 0.44) 30%, rgba(31, 39, 72, 0.43) 31%, rgba(29, 36, 70, 0.42) 32%, rgba(30, 38, 71, 0.41) 33%, rgba(31, 37, 71, 0.4) 34%, rgba(30, 39, 71, 0.39) 35%, rgba(31, 37, 71, 0.38) 36%, rgba(29, 38, 73, 0.37) 37%, rgba(30, 36, 73, 0.36) 38%, rgba(31, 38, 73, 0.35) 39%, rgba(29, 36, 69, 0.33) 40%, rgba(30, 38, 72, 0.32) 41%, rgba(28, 36, 73, 0.3) 42%, rgba(29, 37, 70, 0.28) 43%, rgba(27, 36, 72, 0.27) 44%, rgba(28, 38, 71, 0.26) 45%, rgba(30, 40, 70, 0.24) 46%, rgba(27, 38, 71, 0.22) 47%, rgba(28, 40, 74, 0.21) 48%, rgba(31, 37, 68, 0.2) 49%, rgba(27, 34, 67, 0.18) 50%, rgba(29, 36, 73, 0.16) 51%, rgba(25, 33, 74, 0.15) 52%, rgba(35, 35, 70, 0.14) 53%, rgba(29, 39, 69, 0.12) 54%, rgba(23, 35, 70, 0.11) 55%, rgba(27, 40, 81, 0.09) 56%, rgba(34, 34, 68, 0.08) 57%, rgba(39, 39, 78, 0.06) 58%, rgba(28, 28, 57, 0.05) 59%, rgba(42, 42, 85, 0.03) 60%, rgba(85, 85, 85, 0.02) 61%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /* IE6-9 */
+}
+
+.hero-overly2::before {
+  /* Sử dụng "linear-gradient" để thêm hiệu ứng nền tối cho hình ảnh. Điều này sẽ làm cho văn bản dễ đọc hơn */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1d2546+0,1e2548+11,1c2646+11,1e2548+11,1c2646+11,1e2648+11,1c2447+11,1e2648+11,1c2447+12,1e2647+12,1e2648+12,1d2648+13,1d2446+13,1e2648+14,1c2447+14,1e2647+14,1c2447+14,1e2648+14,1c2546+14,1e2648+14,1d2648+16,1d2446+16,1d2648+16,1e2648+17,1c2546+17,1e2648+17,1c2546+17,1e2548+17,1d2648+18,1d2446+18,1f2648+18,1d2446+18,1d2648+18,1d2447+18,1d2748+19,1e2546+19,1c2547+19,1e2549+19,1c2547+19,1c2648+20,1c2446+20,1e2648+20,1c2446+20,1e2648+20,1d2446+20,1e2648+20,1d2446+20,1e2648+20,1d2446+20,1e2648+20,1e2647+22,1c2448+22,1e2648+22,1c2446+22,1e2648+22,1c2446+22,1e2648+22,1c2446+22,1e2648+23,1c2446+23,1e2648+23,1c2447+23,1e2648+23,1c2447+23,1e2647+23,1c2447+23,1f2547+23,1d2546+24,1d2549+24,1d2546+24,1d2549+24,1d2546+24,1e2648+24,1e2446+24,1e2648+24,1e2446+25,1e2648+25,1e2446+25,1e2648+25,1c2446+25,1e2648+25,1c2447+25,1e2747+25,1c2447+25,1e2747+25,1c2547+25,1e2747+25,1c2546+26,1f2548+26,1c2546+26,1f2548+26,1d2546+26,1f2549+26,1d2546+26,1f2549+26,1d2546+26,1d2648+27,1d2446+27,1d2648+27,1d2446+27,1d2648+27,1d2446+27,1d2648+27,1e2447+27,1e2749+27,1e2447+27,1e2747+27,1e2548+28,1c2546+28,1e2548+28,1c2546+28,1e2549+28,1c2546+28,1e2549+28,1c2647+28,1e2549+28,1c2647+28,1f2647+28,1c2647+29,1f2647+29,1d2447+29,1f2647+29,1d2446+29,1d2648+29,1d2446+29,1d2648+29,1d2446+29,1d2648+29,1d2446+29,1d2749+29,1d2446+29,1d2746+29,1d2446+30,1e2548+30,1e2545+30,1e2548+30,1b2546+30,1e2548+30,1b2546+30,1e2548+30,1e2647+31,1c2347+31,1e2647+31,1c2447+31,1f2647+31,1c2448+31,1f2647+31,1c2446+31,1f2748+31,1c2446+31,1f2748+31,1d2446+31,1f2748+31,1d2446+32,1f2749+32,1d2446+32,1d2749+32,1d2446+32,1e2649+33,1e2347+33,1e2647+33,1b2447+33,1e2647+33,1b2447+33,1e2647+33,1b2447+33,1e2647+33,1c2445+33,1e2748+33,1c2445+34,1e2748+34,1c2446+34,1e2748+34,1c2446+34,1f2749+34,1c2446+34,1f2749+34,1c2547+34,1f2446+34,1c2547+34,1f2547+34,1c2547+34,1f2547+34,1d2648+35,1d2346+35,1d2649+35,1d2346+35,1e2747+35,1e2448+35,1e2747+36,1e2448+36,1e2748+36,1e2445+36,1e2748+36,1b2446+36,1e2748+36,1b2446+36,1e2749+36,1b2446+36,1e2449+36,1c2547+36,1e2449+36,1c2547+36,1f2547+36,1c2548+36,1f2547+36,1c2548+37,1f2548+37,1c2648+37,1f2548+37,1c2645+37,1f2648+37,1c2645+37,1f2648+37,1c2648+37,1d2346+37,1d2649+37,1d2346+37,1d2649+37,1d2447+37,1d2747+38,1d2447+38,1d2748+38,1d2445+38,1d2748+38,1e2446+38,1d2748+38,1e2446+38,1e2849+38,1e2446+38,1e2449+38,1e2546+38,1e2449+38,1e2546+38,1b2547+39,1e2546+39,1b2547+39,1f2547+39,1b2547+39,1f2547+39,1c2648+39,1f2547+39,1c2645+39,1f2648+39,1c2645+39,1f2648+39,1c2646+39,1f2648+39,1c2346+39,1f2649+39,1c2346+39,1f2649+39,1c2347+40,1f2646+40,1c2347+40,202747+40,1c2347+40,202747+40,1d2448+40,1c2747+40,1d2448+40,1d2848+40,1d2448+40,1d2848+40,1d2445+40,1d2848+40,1d2445+40,1d2849+40,1d2445+40,1d2449+40,1e2546+41,1e254a+41,1e2546+41,1e2648+41,1b2648+41,1e2648+41,1b2746+41,1e2648+41,1b2346+41,1f2749+41,1b2346+42,1f2749+42,1b2347+42,1f2749+42,1b2347+42,1f274b+42,1b2347+42,1f2747+42,1c2448+42,1f2747+42,1c2448+42,202848+42,1c2448+42,202848+42,1c2449+42,202848+42,1c2445+42,202849+42,1c2445+42,202449+43,1d2546+43,1c2449+43,1d2546+43,1d254a+43,1d2546+43,1d254a+43,1d2546+43,1e2648+43,1e2745+44,1e2648+44,1e2345+44,1e2749+44,1e2345+44,1e2749+44,1f2346+44,1e2749+44,1f2346+44,1f284b+44,1a2346+44,1f2846+44,1b2448+44,1f2846+44,1b2448+44,1f2848+44,1b2448+44,1f2848+44,1b2449+44,1f2848+45,1b2449+45,202949+45,1b2444+45,202449+45,1c2546+45,202449+45,1c2546+45,20254a+45,1c2546+45,20254a+45,1c2647+45,20254a+45,1c2647+45,212647+45,1c2647+45,1d274a+46,1d2245+46,1d274a+46,1d2245+46,1d274a+46,1e2346+46,1d274a+46,1e2346+46,1e284b+46,1e2346+46,1e284b+46,1f2447+46,1e2846+46,1f2447+46,1f2947+46,1f2447+47,1f2947+47,1f2449+47,1f2947+47,1a2449+47,1f2449+47,1a2444+47,1f2449+47,1b2545+47,1f2449+47,1b2545+47,20254a+47,1b2545+47,20254a+47,1b2647+47,20254a+47,1b2647+47,212647+47,1b2647+47,212647+48,1c2748+48,212647+48,1c2748+48,212748+48,1c2748+48,212748+48,1c224a+48,212748+48,1c2244+48,22284a+48,1c2244+48,1c284a+48,1d2346+48,1c284a+48,1d2346+48,1d294b+48,1d2346+48,1d294b+48,1e2447+49,1d2946+49,1e2447+49,1e2a47+49,1e2447+49,1e2a47+49,1e2449+49,1e2a47+49,1e2449+49,1e2449+49,1f2544+49,1e2449+49,1f2544+49,1f254b+49,1f2544+49,1f254b+49,1a2646+49,1f254b+50,1a2646+50,20264d+50,1a2646+50,202646+50,1a2748+50,202646+50,1a2748+50,212748+50,1a2748+50,212748+50,1b224a+50,212748+50,1b224a+50,22284a+50,1b2243+50,22284a+50,1c2245+50,22284a+50,1c2245+50,22294c+51,1c2245+51,22294c+51,1c2347+51,22294c+51,1c2347+51,1c2b47+51,1c2347+51,1c2b47+51,1d2449+51,1c2b47+51,1d2449+51,1d2449+51,1e2543+51,1d2449+51,1e2543+51,1e254b+51,1e2543+52,1e254b+52,1f2746+52,1e254b+52,1f2746+52,1f274d+52,1f2746+52,202848+52,19214a+52,202848+52,19214a+52,21294a+52,192142+52,21294a+53,1a2244+53,21294a+53,1a2244+53,222a4c+53,1a2244+53,222a4c+53,1a2346+53,222a4c+53,1a2346+53,232c46+53,1a2346+53,232c46+53,1b2449+53,232346+53,1b2449+53,242449+53,1b2449+53,242449+53,1c264c+54,1b2449+54,1c2642+54,1c264c+54,1c2642+54,1c264c+54,1d2745+54,1c264c+54,1d2745+54,1d274e+54,1d2745+54,1d274e+54,1f2947+54,1d2745+54,1f2947+54,1f1f47+54,1f2947+54,20204a+54,1f2947+55,20204a+55,202a4a+55,20204a+55,202a4a+55,212143+55,202a4a+55,212143+55,212c4e+55,162143+55,212c4e+55,172346+55,212c4e+55,172346+55,232e51+55,172346+55,232e46+55,182449+55,232346+55,182449+55,242449+56,182449+56,242449+56,1a264d+56,242449+56,1a2640+56,26264d+56,1a2640+56,26264d+56,1b2843+56,26264d+56,1b2843+56,282851+56,1b2843+56,282851+56,1c2b47+56,1b2843+56,1c2b47+56,1c2b47+56,1c1c47+57,1c2b47+57,1e1e4b+57,1c2b47+57,1e1e4b+57,1e2d4b+57,1e1e4b+57,1e2d4b+57,202040+57,1e2d4b+57,202040+57,203050+57,202040+57,203050+57,222244+57,203050+57,222244+57,223355+57,222244+57,223344+58,242449+58,222244+58,122449+58,242449+58,122449+58,242449+58,14274e+58,242449+58,14274e+58,27274e+58,14273b+58,27274e+58,152a40+58,27274e+58,152a40+58,2a2a55+58,152a40+58,2a2a55+58,172e46+59,2a2a55+59,171746+59,2e2e46+59,171746+59,2e2e46+59,1a1a4d+59,2e2e46+59,1a1a4d+59,33334d+59,1a1a4d+59,1a334d+59,1c1c55+59,1a334d+59,1c1c39+59,1c3955+59,1c1c39+59,1c3955+59,202040+59,1c3955+60,202040+60,204060+60,202040+60,202060+60,242449+60,202040+60,242449+60,242449+60,2a2a55+60,242449+60,2a2a55+60,2a2a55+60,2a2a2a+60,2a2a55+60,003333+60,2a2a55+60,003333+61,333366+61,003333+61,333366+61,004040+61,333366+61,000040+61,404040+61,000040+61,404040+61,000055+61,404040+61,000055+61,555555+61,000055+61,555555+61,000080+61,555555+61,000000+61,808080+61,000000+62,808080+62,000000+62,808080+62,000000+62,00ffff+62,000000+62,0000ff+62,000000+62,000000+100&0.78+0,0+62,0+100 */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(rgba(29, 37, 70, 0.78)), color-stop(11%, rgba(30, 38, 72, 0.64)), color-stop(12%, rgba(30, 38, 72, 0.63)), color-stop(13%, rgba(29, 36, 70, 0.62)), color-stop(14%, rgba(30, 38, 72, 0.61)), color-stop(16%, rgba(29, 38, 72, 0.58)), color-stop(17%, rgba(30, 37, 72, 0.57)), color-stop(18%, rgba(29, 36, 71, 0.56)), color-stop(19%, rgba(28, 37, 71, 0.55)), color-stop(20%, rgba(30, 38, 72, 0.54)), color-stop(22%, rgba(28, 36, 70, 0.51)), color-stop(23%, rgba(31, 37, 71, 0.5)), color-stop(24%, rgba(30, 38, 72, 0.49)), color-stop(25%, rgba(30, 39, 71, 0.48)), color-stop(26%, rgba(29, 37, 70, 0.47)), color-stop(27%, rgba(30, 39, 71, 0.46)), color-stop(28%, rgba(31, 38, 71, 0.45)), color-stop(29%, rgba(29, 39, 70, 0.44)), color-stop(30%, rgba(30, 37, 72, 0.43)), color-stop(31%, rgba(31, 39, 72, 0.42)), color-stop(32%, rgba(29, 36, 70, 0.41)), color-stop(33%, rgba(30, 39, 72, 0.4)), color-stop(34%, rgba(31, 37, 71, 0.39)), color-stop(35%, rgba(30, 36, 72, 0.38)), color-stop(36%, rgba(31, 37, 71, 0.37)), color-stop(37%, rgba(29, 36, 71, 0.36)), color-stop(38%, rgba(30, 37, 70, 0.35)), color-stop(39%, rgba(31, 38, 73, 0.34)), color-stop(40%, rgba(29, 36, 73, 0.33)), color-stop(41%, rgba(31, 39, 73, 0.32)), color-stop(42%, rgba(28, 36, 69, 0.3)), color-stop(43%, rgba(30, 38, 72, 0.28)), color-stop(44%, rgba(27, 36, 73, 0.27)), color-stop(45%, rgba(28, 38, 71, 0.26)), color-stop(46%, rgba(31, 41, 71, 0.24)), color-stop(47%, rgba(27, 38, 71, 0.22)), color-stop(48%, rgba(29, 41, 75, 0.21)), color-stop(49%, rgba(26, 38, 70, 0.2)), color-stop(50%, rgba(28, 34, 69, 0.18)), color-stop(51%, rgba(30, 37, 75, 0.16)), color-stop(52%, rgba(25, 33, 66, 0.15)), color-stop(53%, rgba(36, 36, 73, 0.14)), color-stop(54%, rgba(32, 32, 74, 0.12)), color-stop(55%, rgba(24, 36, 73, 0.11)), color-stop(56%, rgba(28, 43, 71, 0.09)), color-stop(57%, rgba(34, 34, 68, 0.08)), color-stop(58%, rgba(42, 42, 85, 0.06)), color-stop(59%, rgba(32, 32, 64, 0.05)), color-stop(60%, rgba(42, 42, 85, 0.03)), color-stop(61%, rgba(128, 128, 128, 0.02)), color-stop(62%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to right, rgba(29, 37, 70, 0.78) 0%, rgba(30, 38, 72, 0.64) 11%, rgba(30, 38, 72, 0.63) 12%, rgba(29, 36, 70, 0.62) 13%, rgba(30, 38, 72, 0.61) 14%, rgba(29, 38, 72, 0.58) 16%, rgba(30, 37, 72, 0.57) 17%, rgba(29, 36, 71, 0.56) 18%, rgba(28, 37, 71, 0.55) 19%, rgba(30, 38, 72, 0.54) 20%, rgba(28, 36, 70, 0.51) 22%, rgba(31, 37, 71, 0.5) 23%, rgba(30, 38, 72, 0.49) 24%, rgba(30, 39, 71, 0.48) 25%, rgba(29, 37, 70, 0.47) 26%, rgba(30, 39, 71, 0.46) 27%, rgba(31, 38, 71, 0.45) 28%, rgba(29, 39, 70, 0.44) 29%, rgba(30, 37, 72, 0.43) 30%, rgba(31, 39, 72, 0.42) 31%, rgba(29, 36, 70, 0.41) 32%, rgba(30, 39, 72, 0.4) 33%, rgba(31, 37, 71, 0.39) 34%, rgba(30, 36, 72, 0.38) 35%, rgba(31, 37, 71, 0.37) 36%, rgba(29, 36, 71, 0.36) 37%, rgba(30, 37, 70, 0.35) 38%, rgba(31, 38, 73, 0.34) 39%, rgba(29, 36, 73, 0.33) 40%, rgba(31, 39, 73, 0.32) 41%, rgba(28, 36, 69, 0.3) 42%, rgba(30, 38, 72, 0.28) 43%, rgba(27, 36, 73, 0.27) 44%, rgba(28, 38, 71, 0.26) 45%, rgba(31, 41, 71, 0.24) 46%, rgba(27, 38, 71, 0.22) 47%, rgba(29, 41, 75, 0.21) 48%, rgba(26, 38, 70, 0.2) 49%, rgba(28, 34, 69, 0.18) 50%, rgba(30, 37, 75, 0.16) 51%, rgba(25, 33, 66, 0.15) 52%, rgba(36, 36, 73, 0.14) 53%, rgba(32, 32, 74, 0.12) 54%, rgba(24, 36, 73, 0.11) 55%, rgba(28, 43, 71, 0.09) 56%, rgba(34, 34, 68, 0.08) 57%, rgba(42, 42, 85, 0.06) 58%, rgba(32, 32, 64, 0.05) 59%, rgba(42, 42, 85, 0.03) 60%, rgba(128, 128, 128, 0.02) 61%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /* IE6-9 */
+}
+
+/*------------------------------------CSS Login----------------------------------*/
+.gray-light {
+  background-color: #f0f2f5;
+}
+
+.center {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+
+.login-area {
+  height: 100vh !important;
+}
+
+.br-l {
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-l {
+    border: none;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .br-l {
+    border: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .br-l {
+    border: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

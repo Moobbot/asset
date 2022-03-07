@@ -1,0 +1,303 @@
+/*-------------------------------------animation----------------------------------*/
+
+
+/*
+    * Tham khảo tại: https://www.w3schools.com/css/css3_animations.asp
+    * https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp
+*/
+
+//animation
+@mixin animation($args) {
+    -webkit-animation: $args;
+    -moz-animation: $args;
+    -ms-animation: $args;
+    -o-animation: $args;
+    animation: $args;
+}
+
+//keyframes
+@mixin keyframes ($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+
+/*--------------------------------------------------------------------------------*/
+
+// filter
+
+/*
+    * Tham khảo tại: https://www.w3schools.com/cssref/css3_pr_filter.asp
+    * https://xuanthulab.net/su-dung-thuoc-tinh-filter-trong-css.html
+*/
+
+@mixin filter($filter-type, $filter-amount) {
+    -webkit-filter: $filter-type+unquote("(#{$filter-amount})");
+    -moz-filter: $filter-type+unquote("(#{$filter-amount})");
+    -ms-filter: $filter-type+unquote("(#{$filter-amount})");
+    -o-filter: $filter-type+unquote("(#{$filter-amount})");
+    filter: $filter-type+unquote("(#{$filter-amount})");
+}
+
+
+/*--------------------------------------------------------------------------------*/
+
+//gradient
+
+/*
+    *Gradient - màu biến đổi tuyến tính trong CSS cho phép tạo ra các phần tử có màu nền background
+    *là các hiệu ứng chuyển màu giữa hai hay nhiều màu sắc được chỉ định
+    *Có 2 loại Gradient được CSS hỗ trợ:
+    *Linear Gradient: Quét màu xuất phát từ 1 phía,
+    *có thể theo chiều lên, xuống, trái, phải, đường chéo.
+    *Radial Gradient: Quét màu xuất phát từ tâm.
+
+    *direction - Hướng xác định điểm bắt đầu hiệu ứng chuyển màu
+    *direction - (to + (top, bottom, bottom right, right, ...)) Ex: to top
+    *color-stop1, color-stop2 - Các điểm dừng màu
+    * Tham khảo tại: https://www.w3schools.com/css/css3_gradients.asp
+    *@include gradient(direction, color-stop1, color-stop2)
+*/
+
+@mixin gradient($deg, $args1, $args2) {
+    background: -webkit-linear-gradient($deg, $args1, $args2);
+    background: -moz-linear-gradient($deg, $args1, $args2);
+    background: -o-linear-gradient($deg, $args1, $args2);
+    background: -ms-linear-gradient($deg, $args1, $args2);
+    background: linear-gradient($deg, $args1, $args2);
+}
+
+
+/*--------------------------------------------------------------------------------*/
+
+// transform
+
+/*
+    * Tham khảo tại: https://viblo.asia/p/tap-tanh-tim-hieu-css-animation-bai-2-transforms-4dbZNpNg5YM
+*/
+
+//@include transform(translate(-50%, -50%));
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+
+@mixin transform($value) {
+    -webkit-transform: $value;
+    -ms-transform: $value;
+    transform: $value;
+}
+
+// Browser Prefixes
+@mixin transform($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    transform: $transforms;
+}
+
+// Translate
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+// TranslateY
+@mixin translateY ($y) {
+    @include transform(translateY($y));
+}
+
+// TranslateY
+@mixin translateX ($x) {
+    @include transform(translateX($x));
+}
+
+
+/*--------------------------------------------------------------------------------*/
+
+
+/*------------------------------------transition----------------------------------*/
+
+
+/*
+    * Tham khảo tại: https://www.w3schools.com/css/css3_transitions.asp
+*/
+
+// @include transition(.4s);
+@mixin transition($time) {
+    -webkit-transition: all $time ease-out 0s;
+    -moz-transition: all $time ease-out 0s;
+    -ms-transition: all $time ease-out 0s;
+    -o-transition: all $time ease-out 0s;
+    transition: all $time ease-out 0s;
+}
+
+//transform_time - Biến đổi thời gian
+@mixin transform_time($total_time) {
+    -webkit-transition: $total_time;
+    transition: $total_time;
+}
+
+@mixin transition_03($args: all 0.3s ease 0s) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin transition_06($args: all 0.6s ease 0s) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+// transition-duration
+@mixin transition-duration($args1, $args2) {
+    -webkit-transition-duration: $args1, $args2;
+    -moz-transition-duration: $args1, $args2;
+    -o-transition-duration: $args1, $args2;
+    transition-duration: $args1, $args2;
+}
+
+//transition-delay
+@mixin transition-delay($args1, $args2) {
+    -webkit-transition-delay: $args1, $args2;
+    -moz-transition-delay: $args1, $args2;
+    -o-transition-delay: $args1, $args2;
+    transition-delay: $args1, $args2;
+}
+
+//transition-property
+@mixin transition-property($args1, $args2) {
+    -webkit-transition-property: $args1, $args2;
+    -moz-transition-property: $args1, $args2;
+    -o-transition-property: $args1, $args2;
+    transition-property: $args1, $args2;
+}
+
+
+/*--------------------------------------------------------------------------------*/
+
+
+/*
+    *Align content - Căn chỉnh nội dung
+*/
+
+// @include justify-content(space-between);
+@mixin justify-content($justify) {
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+    justify-content: $justify;
+    -ms-flex-pack: $justify;
+}
+
+@mixin align-content($align) {
+    -webkit-align-content: $align;
+    -moz-align-content: $align;
+    -ms-align-content: $align;
+    align-content: $align;
+}
+
+// @include align-items(flex-end);
+// @include align-items(center);
+@mixin align-items($align) {
+    -webkit-align-items: $align;
+    -moz-align-items: $align;
+    -ms-align-items: $align;
+    align-items: $align;
+}
+
+
+/*--------------------------------------------------------------------------------*/
+
+
+/*--------------------------------Some characteristics----------------------------*/
+
+// Box shadows
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+// opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// border-radius
+@mixin border-radius($man) {
+    -webkit-border-radius: $man;
+    -moz-border-radius: $man;
+    border-radius: $man;
+}
+
+//background
+@mixin background($imgpath, $position: center, $size: cover, $repeat: no-repeat) {
+    background: {
+        image: url($imgpath);
+        position: $position;
+        repeat: $repeat;
+        size: $size;
+    }
+}
+
+// @include flexbox();
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+// @include flex-wrap(wrap);
+@mixin flex-wrap($wrap) {
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+
+/*--------------------------------------------------------------------------------*/
+
+
+/*------------------------------------placeholder----------------------------------*/
+
+
+/*
+    * Tham khảo tại: https://www.w3schools.com/cssref/sel_placeholder.asp
+*/
+
+@mixin placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+
+/*--------------------------------------------------------------------------------*/

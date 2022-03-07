@@ -1,0 +1,168 @@
+/*------------------------------------CSS Slider----------------------------------*/
+
+.slider-height-1 {
+    height: 765px;
+    @media #{$lg} {
+        height: 765px;
+    }
+    @media #{$md} {
+        height: 500px;
+    }
+    @media #{$sm} {
+        height: 500px;
+    }
+    @media #{$xs} {
+        height: 500px;
+    }
+}
+
+.slider-height-2 {
+    height: 400px;
+    background-size: cover;
+    @media #{$md} {
+        height: 300px;
+    }
+    @media #{$sm} {
+        height: 240px;
+    }
+    @media #{$xs} {
+        height: 200px;
+    }
+}
+
+.slider-area {
+    margin-top: -1px;
+    .hero-text {
+        overflow: hidden;
+        // span {
+        //     font-family: $font_1;
+        //     font-weight: 800;
+        //     display: block;
+        // }
+        h1 {
+            font-size: 70px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 29px;
+            text-transform: capitalize;
+            @media #{$lg} {
+                font-size: 70px;
+                line-height: 1.2;
+            }
+            @media #{$md} {
+                font-size: 50px;
+                line-height: 1.2;
+            }
+            @media #{$sm} {
+                font-size: 35px;
+                line-height: 1.4;
+            }
+            @media #{$xs} {
+                font-size: 29px;
+                line-height: 1.4;
+                margin-bottom: 14px;
+            }
+        }
+        p {
+            font-size: 27px;
+            color: #fff;
+            font-family: $font_2;
+            margin-bottom: 50px;
+            @media #{$md} {
+                padding-right: 13px;
+            }
+            @media #{$sm} {
+                padding-right: 0px;
+            }
+            @media #{$xs} {
+                padding-right: 0px;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+
+/* The hero image - là một hình ảnh lớn có văn bản, thường được đặt ở đầu trang web*/
+
+
+/*Tham khảo tại https://www.w3schools.com/howto/howto_css_hero_image.asp*/
+
+.hero-image-1 {
+    background-image: url(../img/gallery/home-1.jpg);
+    /* Định vị và căn giữa hình ảnh để chia tỷ lệ đẹp trên tất cả các màn hình */
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// Hero Overly --Class nền tối cho hình
+.hero-overly {
+    position: relative;
+    z-index: 0;
+    &::before {
+        position: absolute;
+        content: "";
+        @extend %hero1;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background-repeat: no-repeat;
+    }
+}
+
+.hero-overly2 {
+    position: relative;
+    z-index: 0;
+    &::before {
+        position: absolute;
+        content: "";
+        @extend %hero2;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background-repeat: no-repeat;
+    }
+}
+
+.hero-btn {
+    padding: 16px 40px;
+}
+
+//  Transparent Header
+.header-transparent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9;
+}
+
+// Another Hero Page
+.slider-area-2 {
+    .slider-cap {
+        h2 {
+            color: #fff;
+            font-size: 64px;
+            font-weight: 700;
+            text-transform: capitalize;
+            line-height: 1;
+            @media #{$sm} {
+                font-size: 50px;
+            }
+            @media #{$xs} {
+                font-size: 27px;
+            }
+        }
+    }
+}

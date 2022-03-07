@@ -1,0 +1,93 @@
+//* Một số màu tạo thêm để sử dụng
+
+/*-------------   Color Variable  --------------*/
+
+//Colors
+$white: #fff;
+$black: #16161a;
+$gray:#f7f7fd;
+//Theme color
+$theme-color-1: #6785FF;
+$theme-color-2: #140C40;
+$theme-color-3: #f27420;
+$theme-color-4: #ff3500;
+// btn and Section color
+$btn_bg: #6785FF;
+// Heading color
+$heading-color-1:#072366;
+$heading_color-2: #112e41;
+// Body Font
+$body-text-color: #6b7894;
+$hr-border-color:#eceff8;
+// Section Bg
+$section_bg-1: #454545;
+$gray-color-1: #bebebe;
+$gray-color-2: #bdbdbd;
+// font color
+$font_color-1: #10285d;
+$border_color: #fdcb9e;
+// bg
+$brand-bg: #f1f4fa;
+$testimonial-bg:#f9fafc;
+
+/*-------------Color include--------------*/
+
+
+/*-- Background color---*/
+
+.gray-bg {
+    background: $gray;
+}
+
+.white-bg {
+    background: $white;
+}
+
+.black-bg {
+    background: $black;
+}
+
+.theme-bg {
+    background: $theme-color-1;
+}
+
+.brand-bg {
+    background: $brand-bg;
+}
+
+.testimonial-bg {
+    background: $testimonial-bg;
+}
+
+
+/*--- color------*/
+
+.white-color {
+    color: $white;
+}
+
+.black-color {
+    color: $black;
+}
+
+.theme-color-1 {
+    color: $theme-color-1;
+}
+
+.theme-color-2 {
+    color: $theme-color-2;
+}
+
+.theme-color-3 {
+    color: $theme-color-3;
+}
+
+.theme-color-4 {
+    color: $theme-color-4;
+}
+
+// @for $i from 1 through 4 {
+//     .theme-color-#{$i} {
+//         color: '$theme-color-'#{$i};
+//     }
+// }

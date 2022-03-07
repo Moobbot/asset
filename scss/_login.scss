@@ -1,0 +1,67 @@
+    /*------------------------------------CSS Login----------------------------------*/
+    
+    .gray-light {
+        background-color: rgb(240, 242, 245);
+    }
+    
+    .center {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .login-area {
+        height: 100vh !important;
+        // .login-content {
+        //     color: #000 !important;
+        // }
+        // .login-form {
+        //     background-color: #fff;
+        //     display: inline-block;
+        //     height: 456px;
+        //     width: 396px;
+        //     margin-top: 50px;
+        //     text-align: center;
+        // }
+    }
+    
+    .br-l {
+        border-left: 1px solid rgba(0, 0, 0, 0.125);
+        @media #{$md} {
+            border: none;
+        }
+        @media #{$sm} {
+            border: none;
+        }
+        @media #{$xs} {
+            border: none;
+        }
+    }
+    
+    // .text-box {
+    //     font-size: 17px;
+    //     width: 364px;
+    //     padding: 6px 0;
+    // }
+    // .inputtext {
+    //     display: inline-block;
+    //     font-size: 17px;
+    //     padding: 14px 16px;
+    //     width: 330px;
+    // }
+    // .pb-220 {
+    //     padding-bottom: 220px;
+    // }
+    // .x {
+    //     font-size: 28px;
+    //     font-weight: normal;
+    //     line-height: 32px;
+    //     padding: 0 0 20px;
+    //     color: #000;
+    //     // @media #{$sm} {
+    //     //     display: none;
+    //     // }
+    //     // @media #{$xs} {
+    //     //     display: none;
+    //     // }
+    // }
